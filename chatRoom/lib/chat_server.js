@@ -37,11 +37,11 @@ function joinRoom(socket, room){
     currentRoom[socket.id] = room; //记录用户当前的房间
     socket.emit('joinResult', {room: room}); //告诉用户他进入的哪个房间
     socket.broadcast.to(room).emit('message', { //告诉在房间里的用户谁进入了房间
-        text: nickNames[socket.id] + ' has Joined' + room + '.'
+        text: nickNames[socket.id] + ' 进入了' + room + '.'
     })
     var usersInRoom = io.sockets.clients(room);//确定有哪些用户在房间里
     if(usersInRoom.length > 1){ //如果不止一个用户在房间里
-        var usersInRoomSummary = 'Users currently in ' + room + '.'
+        var usersInRoomSummary = '在 ' + room + '房间的人：'
         for( var index in usersInRoom) {
             var userSocketId = usersInRoom[index].id
             if(userSocketId != socket.id){
@@ -75,7 +75,7 @@ function handleNameChangeAttempts(socket, nickNames, namesUsed) {
                     name:name
                 });
                 socket.broadcast.to(currentRoom[socket.id]).emit('message',{
-                    text:previousName+ 'is now knowns as ' + name + '.'
+                    text:previousName+ '改名为 ' + name + '.'
                 });
             } else{  //如果昵称已经被注册了 发送消息
                 socket.emit('nameResult', {
@@ -100,6 +100,7 @@ function handleRoomJoining(socket) {   //更换房间
         socket.leave(currentRoom[socket.id]);
         joinRoom(socket, room.newRoom);
     });
+
 }
 
 function handleClientDisconnection(socket) { //用户断开连接

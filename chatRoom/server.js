@@ -54,7 +54,7 @@ var server = http.createServer(function(request, response){
     serveStatic(response, cache, absPath)
 })
 
-server.listen(3000,function(){
-    console.log("server listning at 3000")
+server.listen(18080,function(){
+    console.log("server listning at 18080")
 })
 chatServer.listen(server)

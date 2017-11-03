@@ -1,46 +1,81 @@
-
-*{margin: 0; padding: 0;}
 body{
-    padding: 50px;
-    font:14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-a{
-    color: #00B7FF;
-}
-#content{
-    width:800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: .22rem;
+    background: rgb(245,245,245);
 }
 #room{
-    background-color: #ddd;
-    margin-bottom: 1em;
-}
-#message{
-    width: 690px;
-    height: 300px;
-    overflow: auto;
-    background-color: #eee;
-    margin-bottom: 1em;
-    margin-right: 10px;
+    padding: .2rem 0rem;
+    font-size: .32rem;
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 #room-list{
-    float: right;
-    width:100px;
-    height: 300px;
-    overflow: auto;
+    overflow: hidden;
 }
 #room-list div{
-    border-bottom: 1px solid #eee;
+    float: left;
+    padding: .2rem .1rem;
+    background-color:#15C969;;
+    color: #FFF;
+    margin-right: .1rem;
+    border: 1px solid #333;
 }
-#room-list div:hover{
-    background-color: #ddd;
+#messages{
+    margin-top: .2rem;
+    overflow: auto;
+    height: 6rem;
+}
+#messages .selfMessage {
+    overflow: hidden;
+}
+#messages .selfMessage span{
+    display: inline-block;
+    background-color: #4A9932;
+    color: #000000;
+    padding: .15rem;
+    border: 1px solid #666;
+    border-radius: .1rem;
+    float: right;
+    margin-right: .5rem;
+}
+#messages div{
+    margin-left: .2rem;
+    font-size: .3rem;
+    padding-top: .2rem;
+}
+#messages div span{
+    background-color: #FFF;
+    color: #000000;
+    display: inline-block;
+    border: 1px solid #666;
+    padding: .15rem;
+    border-radius: .1rem;
+    
+}
+#send-form{
+    margin-top: .6rem;
+    height: 1rem;
 }
 #send-message{
-    width:700px;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    border:1px solid #009E4C;
+    padding: .2rem 0 .2rem .1rem;
+    margin-top: .2rem;
+    margin-left: .2rem;
+    width:4.5rem;
 }
-#help{
-    font: 10px;
+.send-button{
+    background-color: #009E4C;
+    color: white;
+    font-size: .26rem;
+    padding: .1rem;
+    border: 1px solid #666;
+    border-radius: .05rem;
+    margin-left: .15rem;
+}
+.changeInput{
+    border:1px solid #009E4C;
+    padding: .2rem 0 .2rem .1rem;
+    margin-top: .2rem;
+    margin-left: .2rem;
+    width:3rem;
 }
